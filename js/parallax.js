@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const viewportHeight = window.innerHeight;
         const totalHeight = totalContentHeight + viewportHeight;
         
-        parallaxBg.style.height = totalHeight + 'px';
-        parallaxWrapper.style.height = totalHeight + 'px';
+        // parallaxBg.style.height = totalHeight + 'px';
+        // parallaxWrapper.style.height = totalHeight + 'px';
     }
     
     function activateSideImages() {
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function handleScroll() {
         const scrolled = window.pageYOffset;
-        parallaxBg.style.transform = `translateY(${scrolled * 0.5}px)`;
+        totalHeight = `translateY(${scrolled * 0.5}px)`;
         
         isScrolling = true;
         
@@ -71,4 +71,5 @@ document.addEventListener('DOMContentLoaded', function() {
     
     window.addEventListener('resize', adjustBackgroundHeight);
     window.addEventListener('scroll', handleScroll);
+
 });
