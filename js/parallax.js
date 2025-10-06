@@ -9,23 +9,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const growthMethod = 'combined';
     
     function adjustBackgroundHeight() {
-        const content = document.querySelector('.content');
-        const extraContents = document.querySelectorAll('.extra-content');
-        const contentBackground = document.querySelector('.content-background');
+        // Calcular la altura del CONTENIDO VISIBLE solamente
+        const contentElements = document.querySelectorAll('.content, .extra-content, .content-background');
+        let totalContentHeight = 0;
         
-        let totalContentHeight = content.offsetHeight;
-        
-        extraContents.forEach(extra => {
-            totalContentHeight += extra.offsetHeight + 50;
+        contentElements.forEach(element => {
+            totalContentHeight += element.offsetHeight;
         });
         
-        totalContentHeight += contentBackground.offsetHeight + 50;
-        
-        const viewportHeight = window.innerHeight;
-        const totalHeight = totalContentHeight + viewportHeight;
-        
-        // parallaxBg.style.height = totalHeight + 'px';
-        // parallaxWrapper.style.height = totalHeight + 'px';
+        // ⭐ SOLUCIÓN: Usar solo la altura del contenido, sin viewport extra
+        // parallaxBg.style.height = totalContentHeight + 'px';
+        // parallaxWrapper.style.height = totalContentHeight + 'px';
     }
     
     function activateSideImages() {
@@ -52,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     function handleScroll() {
         const scrolled = window.pageYOffset;
-        totalHeight = `translateY(${scrolled * 0.5}px)`;
+        totalContentHeight = `translateY(${scrolled * 0.5}px)`;
         
         isScrolling = true;
         
@@ -66,10 +60,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 1500);
     }
     
-    adjustBackgroundHeight();
-    activateSideImages();
+    // ⭐ ESPERAR a que todas las imágenes carguen
+    window.addEventListener('load', function() {
+        adjustBackgroundHeight();
+        activateSideImages();
+        
+        window.addEventListener('resize', adjustBackgroundHeight);
+        window.addEventListener('scroll', handleScroll);
+    });
     
-    window.addEventListener('resize', adjustBackgroundHeight);
-    window.addEventListener('scroll', handleScroll);
-
+    // También ajustar después de un tiempo por si hay carga diferida
+    setTimeout(adjustBackgroundHeight, 1000);
 });
