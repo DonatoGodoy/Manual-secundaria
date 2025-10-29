@@ -5,10 +5,13 @@
 }
 
 body {
-    font-family: 'Alegreya', serif;
-    line-height: 1.5;
-    color: #333;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    color: #444;
     overflow-x: hidden;
+    background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+    min-height: 100vh;
+    padding: 20px;
 }
 
 .parallax-wrapper {
@@ -19,19 +22,19 @@ body {
     overflow-x: hidden;
 }
 
+/* Fondo decorativo similar al estilo original */
 .parallax-bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../assets/rect1.svg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+    opacity: 0.3;
     z-index: -2;
 }
 
+/* Bloque con imagen decorativa */
 .content-background {
     position: relative;
     width: 100%;
@@ -41,19 +44,23 @@ body {
     background-position: center;
     margin: 50px 0;
     z-index: -2;
+    border-top: 3px solid #c19a6b;
+    border-bottom: 3px solid #c19a6b;
 }
 
+/* Tentáculos laterales */
 .side-image {
     position: fixed;
     top: 0;
     width: 150px;
     height: 100%;
     z-index: -1;
-    opacity: 1;
+    opacity: 0.9;
     transition: all 4s ease;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    filter: brightness(0.9) contrast(1.1);
 }
 
 .side-image.left {
@@ -69,83 +76,114 @@ body {
 }
 
 .side-image.active {
-    opacity: 0.8;
+    opacity: 1;
     transform: translateX(0) scale(1);
 }
 
 .side-image.growing.combined {
     width: 25vw;
     transform: translateX(0) scale(1.15);
-    opacity: 0.9;
+    opacity: 0.95;
     filter: brightness(1.05);
 }
 
-.content {
+/* Bloques principales */
+.content,
+.extra-content {
     position: relative;
-    background-color: rgba(255, 255, 255, 0.90);
-    max-width: 800px;
+    background: linear-gradient(to bottom, #fdfcfb 0%, #f5f2eb 100%);
+    max-width: 900px;
     margin: 0 auto;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    padding: 50px;
+    border-radius: 15px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid #e8e4d9;
     margin-top: 50px;
     margin-bottom: 50px;
     z-index: 1;
 }
 
-.extra-content {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.90);
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px;
-    margin-bottom: 50px;
-    z-index: 1;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-}
-
+/* Encabezado principal */
 .cuento h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     color: #2c3e50;
-    font-size: 2.5rem;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    font-size: 2.8rem;
+    border-bottom: 3px solid #c19a6b;
+    padding-bottom: 15px;
+    font-family: 'Times New Roman', serif;
 }
 
+/* Autor */
 .autor {
     font-style: italic;
     text-align: center;
-    margin-bottom: 3rem;
-    color: #666;
+    margin-bottom: 2.5rem;
+    color: #555;
     font-size: 1.1rem;
 }
 
-.poema {
-  text-align: center !important;
-  white-space: pre-line;
-  line-height: 1.5;
-  margin: 1em 0;
-  text-indent: 0 !important;
-}
-
+/* Texto general */
 .texto-cuento p {
-    margin-bottom: 1.5em;
+    margin-bottom: 25px;
     text-indent: 2em;
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     text-align: justify;
-    line-height: 1.5;
+    line-height: 1.9;
+    color: #444;
 }
 
+/* Poema */
+.poema {
+    text-align: center !important;
+    white-space: pre-line;
+    font-style: italic;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(193, 154, 107, 0.1);
+    border-left: 3px solid #c19a6b;
+    border-radius: 5px;
+    text-indent: 0 !important;
+    font-size: 1.1rem;
+}
+
+/* Capítulos y subtítulos */
 .capitulo {
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid #eee;
+    border-top: 2px solid #c19a6b;
+}
+
+.capitulo h2,
+.capitulo h3,
+.capitulo h4 {
+    color: #2c3e50;
+    font-family: 'Times New Roman', serif;
+    margin-bottom: 1.2rem;
+    text-align: left !important;
 }
 
 .capitulo h2 {
-    // color: #3498db;
-    margin-bottom: 1.5rem;
     font-size: 1.8rem;
-    text-align: left !important;
+    border-bottom: 2px solid rgba(193, 154, 107, 0.4);
+    padding-bottom: 5px;
+}
+
+.capitulo h3 {
+    font-size: 1.5rem;
+}
+
+.capitulo h4 {
+    font-size: 1.3rem;
+    color: #4b3b25;
+}
+
+/* Animación sutil al hacer scroll */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.content, .extra-content, .capitulo {
+    animation: fadeIn 1s ease forwards;
 }
