@@ -13,13 +13,37 @@
 	<div class="content">
             <div class="cuento">
 				<img src="portada.jpg" alt="Portada" style="max-width: 100%; height: auto; display: block; margin: 30px auto;">
-	<h1>Manual Moreno</h1>
+	<div class="indice-container">
+    <h2 class="indice-titulo">Índice del Capítulo</h2>
+    <ul class="lista-indice">
+        <li class="item-indice">
+            <a href="https://docs.google.com/document/d/184IKysM0m0bUuscgD5rp8FAnMEFYJV2SrAXgbiMSsrU/edit?tab=t.qbs6d4wz874w" 
+               target="_blank" 
+               class="enlace-indice externo">
+                Fundamentación
+            </a>
+        </li>
+        <li class="item-indice">
+            <a href="#punto-coma-punto-y-coma" 
+               class="enlace-indice">
+                Punto, coma y punto y coma
+            </a>
+        </li>
+        <li class="item-indice">
+            <a href="cuento.html" 
+               class="enlace-indice archivo">
+                Cuento Interactivo
+            </a>
+        </li>
+    </ul>
+</div>
+				
 <div class="autor">Capítulo 1<br/>
 "Correo Electrónico y Signos de Puntuación"<div>
 <div class="texto-cuento">
 
 
-<h2 style="text-align: left;"><br/>Punto, coma y punto y coma: los signos que ordenan tus ideas.</h2>
+<h2 style="text-align: left;" id="punto-coma-punto-y-coma"><br/>Punto, coma y punto y coma: los signos que ordenan tus ideas.</h2>
 
 <p><br/>El punto (.), el punto y coma (;) y la coma (,) son algunos de los signos ortográficos que representan breves pausas entre las palabras de un texto y se diferencian por la duración de la misma: siendo el punto el de mayor duración, el punto y coma como un estadío intermedio y la coma como la pausa más breve.
 Gracias a la duración particular de cada signo en la lectura, podemos desprender los usos que se le dan para formar oraciones.</p> 
@@ -286,10 +310,60 @@ C- Sentía miedo. Sin embargo, no podía marcharme.</br></p>
                 }
             });
         });
+
+	// Función para el comportamiento del índice
+function inicializarIndice() {
+    const enlacesInternos = document.querySelectorAll('.enlace-indice[href^="#"]');
+    
+    enlacesInternos.forEach(enlace => {
+        enlace.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const destinoId = this.getAttribute('href').substring(1);
+            const destinoElement = document.getElementById(destinoId);
+            
+            if (destinoElement) {
+                // Scroll suave al destino
+                destinoElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Efecto visual de highlight
+                destinoElement.style.transition = 'all 0.5s ease';
+                destinoElement.style.backgroundColor = 'rgba(193, 154, 107, 0.1)';
+                
+                setTimeout(() => {
+                    destinoElement.style.backgroundColor = '';
+                }, 2000);
+            }
+        });
+    });
+    
+    // Añadir IDs a las secciones si no los tienen
+    const secciones = document.querySelectorAll('h2, h3');
+    secciones.forEach((seccion, index) => {
+        if (!seccion.id) {
+            // Crear ID basado en el texto del título
+            const texto = seccion.textContent.trim().toLowerCase()
+                .replace(/[^a-z0-9áéíóúüñ]/g, '-')
+                .replace(/-+/g, '-')
+                .replace(/^-|-$/g, '');
+            seccion.id = texto || `seccion-${index + 1}`;
+        }
+    });
+}
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', function() {
+    inicializarIndice();
+    // ... el resto de tu código existente
+});
     </script>
 </body>
 
 </html>
+
 
 
 
