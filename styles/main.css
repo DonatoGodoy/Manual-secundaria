@@ -405,3 +405,25 @@ body {
     }
 }
 
+/* CSS específico para imágenes dentro del cuento */
+.cuento img.imagen-contenida {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border: 2px solid red; /* Temporal para ver si se aplica */
+}
+
+.cuento .contenedor-imagen {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.cuento .contenedor-imagen img {
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+
