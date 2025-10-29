@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Alegreya', serif;
+    line-height: 1.5;
+    color: #333;
+    overflow-x: hidden;
+}
+
+.parallax-wrapper {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.parallax-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/rect1.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+.content-background {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    background-image: url("../assets/catulu3.png");
+    background-size: cover;
+    background-position: center;
+    margin: 50px 0;
+    z-index: -2;
+}
+
+.side-image {
+    position: fixed;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    z-index: -1;
+    opacity: 1;
+    transition: all 4s ease;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.side-image.left {
+    left: 0;
+    background-image: url("../assets/tentaculosi.png");
+    transform: translateX(-100%) scale(1);
+}
+
+.side-image.right {
+    right: 0;
+    background-image: url("../assets/tentaculosd.png");
+    transform: translateX(100%) scale(1);
+}
+
+.side-image.active {
+    opacity: 0.8;
+    transform: translateX(0) scale(1);
+}
+
+.side-image.growing.combined {
+    width: 25vw;
+    transform: translateX(0) scale(1.15);
+    opacity: 0.9;
+    filter: brightness(1.05);
+}
+
+.content {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.90);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 50px;
+    z-index: 1;
+}
+
+.extra-content {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.90);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    margin-bottom: 50px;
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.cuento h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    font-size: 2.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+.autor {
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.poema {
+  text-align: center !important;
+  white-space: pre-line;
+  line-height: 1.5;
+  margin: 1em 0;
+  text-indent: 0 !important;
+}
+
+.texto-cuento p {
+    margin-bottom: 1.5em;
+    text-indent: 2em;
+    font-size: 1.25rem;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.capitulo {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.capitulo h2 {
+    // color: #3498db;
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    text-align: left !important;
+}
