@@ -431,17 +431,6 @@ body {
     50% { transform: scale(1.08); }
 }
 
-/* Genially Container */
-.genially-container {
-    margin: 50px 0;
-    padding: 35px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
-    border-radius: 18px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    border: 2px solid #e8e4d9;
-    border-left: 6px solid #4ca1af;
-}
-
 .titulo-genially {
     text-align: center;
     color: #2c3e50;
@@ -452,18 +441,39 @@ body {
     padding-bottom: 12px;
 }
 
+/* CORRECCIÓN PARA GENIALLY - Permitir interacción */
+.genially-embed iframe {
+    border-radius: 10px;
+    display: block;
+    /* REMOVER esta línea: pointer-events: none; */
+    /* En su lugar, usar: */
+    pointer-events: auto;
+}
+
+/* Opcional: Si quieres mejorar la experiencia de scroll */
+.genially-container {
+    margin: 50px 0;
+    padding: 35px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 249, 250, 0.95) 100%);
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    border: 2px solid #e8e4d9;
+    border-left: 6px solid #4ca1af;
+    /* Asegurar que el contenedor no interfiera */
+    position: relative;
+    z-index: 1;
+}
+
+/* Si el problema persiste, agregar esto */
 .genially-embed {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     background: #f8f9fa;
     border: 2px solid #e8e4d9;
-}
-
-.genially-embed iframe {
-    border-radius: 10px;
-    display: block;
-    pointer-events: none;
+    /* Asegurar que el embed sea interactivo */
+    position: relative;
+    z-index: 2;
 }
 
 /* Versión alternativa más sutil */
@@ -994,5 +1004,6 @@ body {
 .campo-texto::-webkit-scrollbar-thumb:hover {
     background: #a87c52;
 }
+
 
 
