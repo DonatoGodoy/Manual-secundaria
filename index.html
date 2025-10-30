@@ -41,6 +41,12 @@
             </a>
 		</li>
 		<li class="item-indice">
+            <a href="#evaluacion" 
+               class="enlace-indice">
+                Evaluación
+            </a>
+        </li>
+		<li class="item-indice">
             <a href="#bibliografia" 
                class="enlace-indice">
                 Bibliografía
@@ -67,7 +73,13 @@
     </div>
 </div>
 
-	<a href="cuento.html">Ir al Cuento Interactivo</a>
+	<div class="boton-cuento-container">
+    <a href="cuento.html" class="boton-cuento-alternativo">
+        <span class="boton-icono">📚</span>
+        <span class="boton-texto">Continuar al Cuento Interactivo</span>
+        <span class="boton-flecha">→</span>
+    </a>
+</div>
 	<!-- Sección de carta interactiva -->
 <div class="carta-interactiva">
     <h3>Correo Electrónico.</h3>
@@ -100,40 +112,111 @@
 	
 <h2 style="text-align: left;" id="actividades"><br/> ACTIVIDADES: </h2>
 
-<p>1-Luego de leer el cuento, han notado que la narración produce emociones variadas.  Escribile un mensaje de whatsapp a tu amigo/a contándole qué sensaciones o emociones te produjo la lectura ( no olvides de utilizar los signos de puntuación para transmitirlas)</p>
+<div class="actividad-escritura">
+    <h4>Actividad 1: Mensaje de WhatsApp</h4>
+    <p>Luego de leer el cuento, han notado que la narración produce emociones variadas. Escribile un mensaje de whatsapp a tu amigo/a contándole qué sensaciones o emociones te produjo la lectura (no olvides de utilizar los signos de puntuación para transmitirlas):</p>
+    
+    <div class="encabezado-texto">
+        <span class="contador-caracteres">0/500 caracteres</span>
+    </div>
+    <textarea 
+        class="campo-texto actividad" 
+        placeholder="¡Hola! Quería contarte que la lectura me hizo sentir..."
+        maxlength="500"
+        rows="6">
+    </textarea>
+    <div class="acciones-texto">
+        <button class="btn-guardar">Guardar</button>
+        <button class="btn-limpiar">Limpiar</button>
+    </div>
+</div>
 
-<p>2- Si trasladamos las emociones de los personajes, podrían expresarse hoy mediante:</br></br>
-○solo mediantes cartas.</br>
-○mediante memes, chats o redes sociales.</br>
-○a través de un dibujo. ( ESTA NO PORQUE ES BOLUDA Y NO LA TERMINE)</br></p>
+<!-- Actividad 6: Multiple Choice -->
+<div class="actividad-escritura">
+    <h4>Actividad 2: Selección de Oraciones Correctas</h4>
+    <p>A continuación encontrarás varias oraciones. En cada grupo sólo una es correcta. Selecciona la correcta según lo trabajado anteriormente:</p>
+    
+    <!-- Pregunta 1 -->
+    <div class="pregunta-multiple">
+        <p class="pregunta-titulo"><strong>1• ¿Cuál oración es correcta?</strong></p>
+        <div class="opciones-container">
+            <label class="opcion">
+                <input type="radio" name="pregunta1" value="A">
+                <span class="opcion-texto">A- El viento soplaba con fuerza; la casa parecía crujir.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta1" value="B">
+                <span class="opcion-texto">B- El viento soplaba con fuerza la casa parecía crujir.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta1" value="C">
+                <span class="opcion-texto">C- El viento soplaba con fuerza, la casa parecía crujir.</span>
+            </label>
+        </div>
+    </div>
 
-<p>3- Selecciona una escena del cuento y reescribirla en forma moderna, como si los personajes lo expresaran en redes sociales ( no olvides de utilizar los signos de puntuación para darle sentido al relato)</p>
+    <!-- Pregunta 2 -->
+    <div class="pregunta-multiple">
+        <p class="pregunta-titulo"><strong>2• ¿Cuál oración es correcta?</strong></p>
+        <div class="opciones-container">
+            <label class="opcion">
+                <input type="radio" name="pregunta2" value="A">
+                <span class="opcion-texto">A- Roderick Usher, mi viejo amigo, me recibió con un abrazo.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta2" value="B">
+                <span class="opcion-texto">B- Roderick Usher mi viejo amigo me recibió con un abrazo.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta2" value="C">
+                <span class="opcion-texto">C- Roderick Usher, mi viejo amigo me recibió, con un abrazo.</span>
+            </label>
+        </div>
+    </div>
 
-<p>4- Imagina que el narrador del cuento pública lo que sucede en la casa a través de videos en youtube. Escribí tres publicaciones cortas que generan suspenso y miedo, usando los signos de puntuación .</p>
+    <!-- Pregunta 3 -->
+    <div class="pregunta-multiple">
+        <p class="pregunta-titulo"><strong>3• ¿Cuál oración es correcta?</strong></p>
+        <div class="opciones-container">
+            <label class="opcion">
+                <input type="radio" name="pregunta3" value="A">
+                <span class="opcion-texto">A- La mansión era oscura, fría, silenciosa, etc.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta3" value="B">
+                <span class="opcion-texto">B- La mansión era oscura; fría; silenciosa; etc.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta3" value="C">
+                <span class="opcion-texto">C- La mansión era oscura. Fría, silenciosa.</span>
+            </label>
+        </div>
+    </div>
 
-<p>5- luego de haber creado las publicaciones de los videos de youtube, compartelas en voz alta con sus compañeros marcando el ritmo y respetando la puntuación para crear el ambiente.</p>
+    <!-- Pregunta 4 -->
+    <div class="pregunta-multiple">
+        <p class="pregunta-titulo"><strong>4• ¿Cuál oración es correcta?</strong></p>
+        <div class="opciones-container">
+            <label class="opcion">
+                <input type="radio" name="pregunta4" value="A">
+                <span class="opcion-texto">A- Sentía miedo; sin embargo, no podía marcharme.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta4" value="B">
+                <span class="opcion-texto">B- Sentía miedo. Sin embargo; no podía marcharme.</span>
+            </label>
+            <label class="opcion">
+                <input type="radio" name="pregunta4" value="C">
+                <span class="opcion-texto">C- Sentía miedo. Sin embargo, no podía marcharme.</span>
+            </label>
+        </div>
+    </div>
 
-<p>6-  A continuación encontrarás varias oraciones. En cada grupo sólo una es correcta. Léelas con atención y selecciona la correcta según lo trabajado anteriormente. </br></br></p>
-
-<p> 1• </br>
-A-  El viento soplaba con fuerza; la casa parecía crujir.</br>
-B- El viento soplaba con fuerza la casa parecía crujir. </br>
-C- El viento soplaba con fuerza, la casa parecía crujir.</br></p>
-
-<p>2• </br>
-A- Roderick Usher, mi viejo amigo, me recibió con un abrazo.</br>
-B- Roderick Usher mi viejo amigo me recibió con un abrazo. </br>
-C-  Roderick Usher, mi viejo amigo me recibió, con un abrazo.</br></p>
-
-<p>3• </br>
-A- La mansión era oscura, fría, silenciosa, etc. </br>
-B- La misión era oscura; fría; silenciosa; etc.</br>
-C-  La mansión era oscura. Fría, silenciosa. </br></p>
-
-<p>4•</br>
-A-  Sentía miedo, sin embargo, no podía marcharme.</br>
-B- Sentía miedo. Sin embargo; no podía marcharme.</br>
-C- Sentía miedo. Sin embargo, no podía marcharme.</br></p>
+    <div class="acciones-texto">
+        <button class="btn-verificar" onclick="verificarRespuestas()">Verificar Respuestas</button>
+        <button class="btn-limpiar" onclick="limpiarSelecciones()">Limpiar Selecciones</button>
+    </div>
+</div>
 
 <p>7-  La siguiente carta fue escrita por Roderick Usher a su amigo antes de su llegada a la mansión. El texto no tiene ningún signo de puntuación. Tu tarea es agregar los puntos, comas y los puntos y coma que consideres necesarios para que tenga sentido y sea claro. </p>
 
@@ -165,6 +248,63 @@ C- Sentía miedo. Sin embargo, no podía marcharme.</br></p>
     </div>
 </div>
 
+	 <!-- Espacio para escribir la carta corregida -->
+    <div class="espacio-correccion">
+        <p><strong>Ahora escribe la carta corregida con los signos de puntuación adecuados:</strong></p>
+        <div class="encabezado-texto">
+            <span class="contador-caracteres">0/1000 caracteres</span>
+        </div>
+        <textarea 
+            class="campo-texto correccion" 
+            placeholder="Escribe aquí la carta de Roderick Usher con los signos de puntuación correctos..."
+            maxlength="1000"
+            rows="10">
+Querido amigo espero que te encuentres bien hace mucho tiempo que no nos vemos y no sé nada de vos debo confesarte que mi salud se ha debilitado bastante de una manera muy inquietante la casa se siente más silenciosa cada día las paredes parecen observarnos y mi hermana se encuentra muy enferma también su apariencia me preocupa tanto como la mía a veces me parece escuchar ruidos en el pasillo pero cuando me acerco no hay nada ni nadie las noches son cada vez más largas y el aire más denso necesito de tu compañía te pido que por favor vengas lo antes posible atentamente tu amigo Roderick Usher</textarea>
+        <div class="acciones-texto">
+            <button class="btn-guardar">Guardar corrección</button>
+            <button class="btn-limpiar">Limpiar</button>
+        </div>
+    </div>
+</div>
+
+<h2 style="text-align: left;" id="evaluacion"><br/> Evaluación Integradora</h2>
+	<div class="actividad-escritura">
+    <h4>Redacción de Correo Electrónico</h4>
+    <p>Fuiste testigo del hundimiento de la casa Usher y por tal motivo no llegaste a tiempo a un examen importante. Redacta un email a tu profesor explicando el motivo de tu tardanza.</p>
+    
+    <div class="formulario-correo">
+        <div class="campo-formulario">
+            <label for="destinatario">Para:</label>
+            <input type="text" id="destinatario" class="campo-input" placeholder="ejemplo@email.com">
+        </div>
+        
+        <div class="campo-formulario">
+            <label for="asunto">Asunto:</label>
+            <input type="text" id="asunto" class="campo-input" placeholder="Asunto del correo">
+        </div>
+        
+        <div class="campo-formulario">
+            <label for="cuerpo-correo">Cuerpo del mensaje:</label>
+            <div class="encabezado-texto">
+                <span class="contador-caracteres">0/800 caracteres</span>
+            </div>
+            <textarea 
+                id="cuerpo-correo"
+                class="campo-texto correo" 
+                placeholder="Estimado/a...&#10;&#10;Escribe aquí el contenido de tu correo electrónico..."
+                maxlength="800"
+                rows="12">
+            </textarea>
+        </div>
+    </div>
+    
+    <div class="acciones-texto">
+        <button class="btn-guardar">Guardar correo</button>
+        <button class="btn-limpiar">Limpiar todo</button>
+        <button class="btn-enviar">Enviar</button>
+    </div>
+</div>
+	
 <h2 style="text-align: left;" id="bibliografia"><br/> Bibliografía </h2>
 	<p>BLABLABLA</p>
 
@@ -316,9 +456,90 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+// Guardar posición antes de cargar Genially
+let scrollPosition = window.pageYOffset;
+
+// Después de cargar, restaurar posición
+window.addEventListener('load', function() {
+    window.scrollTo(0, scrollPosition);
+});
+
+// O prevenir cualquier scroll automático
+window.addEventListener('scroll', function(e) {
+    window.scrollTo(0, scrollPosition);
+});
+
+// Respuestas correctas para el multiple choice
+const respuestasCorrectas = {
+    pregunta1: "C",
+    pregunta2: "A", 
+    pregunta3: "A",
+    pregunta4: "C"
+};
+
+function verificarRespuestas() {
+    let correctas = 0;
+    const totalPreguntas = Object.keys(respuestasCorrectas).length;
+
+    // Verificar cada pregunta
+    Object.keys(respuestasCorrectas).forEach(pregunta => {
+        const seleccionada = document.querySelector(`input[name="${pregunta}"]:checked`);
+        const opciones = document.querySelectorAll(`input[name="${pregunta}"]`);
+        
+        // Limpiar estilos anteriores
+        opciones.forEach(opcion => {
+            const label = opcion.closest('.opcion');
+            label.classList.remove('correcta', 'incorrecta', 'seleccionada');
+        });
+
+        if (seleccionada) {
+            const labelSeleccionada = seleccionada.closest('.opcion');
+            labelSeleccionada.classList.add('seleccionada');
+
+            if (seleccionada.value === respuestasCorrectas[pregunta]) {
+                labelSeleccionada.classList.add('correcta');
+                correctas++;
+            } else {
+                labelSeleccionada.classList.add('incorrecta');
+                // Marcar también la correcta
+                const correcta = document.querySelector(`input[name="${pregunta}"][value="${respuestasCorrectas[pregunta]}"]`);
+                if (correcta) {
+                    correcta.closest('.opcion').classList.add('correcta');
+                }
+            }
+        }
+    });
+
+    // Mostrar resultado
+    alert(`Has acertado ${correctas} de ${totalPreguntas} preguntas.`);
+}
+
+function limpiarSelecciones() {
+    const todasOpciones = document.querySelectorAll('.opcion');
+    todasOpciones.forEach(opcion => {
+        opcion.classList.remove('seleccionada', 'correcta', 'incorrecta');
+        const radio = opcion.querySelector('input[type="radio"]');
+        if (radio) radio.checked = false;
+    });
+}
+
+// Inicializar eventos para las opciones
+document.addEventListener('DOMContentLoaded', function() {
+    const opciones = document.querySelectorAll('.opcion');
+    opciones.forEach(opcion => {
+        opcion.addEventListener('click', function() {
+            const radio = this.querySelector('input[type="radio"]');
+            if (radio) {
+                radio.checked = true;
+            }
+        });
+    });
+});
 </script>
 </body>
 </html>
+
 
 
 
