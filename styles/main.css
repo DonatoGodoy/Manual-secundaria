@@ -641,6 +641,199 @@ body {
     }
 }
 
+/* Versión alternativa más sutil */
+.boton-cuento-alternativo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    color: #2c3e50;
+    text-decoration: none;
+    border-radius: 12px;
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid #c19a6b;
+    position: relative;
+}
 
+.boton-cuento-alternativo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(193, 154, 107, 0.25);
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #8b6b47;
+}
 
+.boton-cuento-alternativo .boton-icono {
+    color: #c19a6b;
+    font-size: 1.3rem;
+}
 
+.boton-cuento-alternativo .boton-flecha {
+    color: #c19a6b;
+    transition: transform 0.3s ease;
+}
+
+.boton-cuento-alternativo:hover .boton-flecha {
+    transform: translateX(3px);
+}
+
+/* Estilos para multiple choice */
+.pregunta-multiple {
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(248, 249, 250, 0.8);
+    border-radius: 8px;
+    border-left: 3px solid #4ca1af;
+}
+
+.pregunta-titulo {
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.opciones-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.opcion {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    border: 2px solid #e8e4d9;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.opcion:hover {
+    border-color: #c19a6b;
+    background: rgba(193, 154, 107, 0.05);
+}
+
+.opcion input[type="radio"] {
+    margin-top: 2px;
+}
+
+.opcion-texto {
+    flex: 1;
+    color: #444;
+    line-height: 1.4;
+}
+
+.opcion.seleccionada {
+    border-color: #4ca1af;
+    background: rgba(76, 161, 175, 0.1);
+}
+
+.opcion.correcta {
+    border-color: #27ae60;
+    background: rgba(39, 174, 96, 0.1);
+}
+
+.opcion.incorrecta {
+    border-color: #e74c3c;
+    background: rgba(231, 76, 60, 0.1);
+}
+
+/* Estilos para el espacio de corrección */
+.espacio-correccion {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    border: 2px dashed #c19a6b;
+}
+
+.campo-texto.correccion {
+    font-family: 'Courier New', monospace;
+    background: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+
+/* Estilos para el formulario de correo */
+.formulario-correo {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e8e4d9;
+}
+
+.campo-formulario {
+    margin-bottom: 15px;
+}
+
+.campo-formulario label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.campo-input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #e8e4d9;
+    border-radius: 6px;
+    font-family: 'Georgia', serif;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.campo-input:focus {
+    outline: none;
+    border-color: #c19a6b;
+    box-shadow: 0 0 0 3px rgba(193, 154, 107, 0.1);
+}
+
+.campo-texto.correo {
+    min-height: 200px;
+    background: #f8f9fa;
+}
+
+/* Botones especiales */
+.btn-verificar {
+    background: #27ae60;
+    color: white;
+}
+
+.btn-verificar:hover {
+    background: #219653;
+}
+
+.btn-enviar {
+    background: #3498db;
+    color: white;
+}
+
+.btn-enviar:hover {
+    background: #2980b9;
+}
+
+/* Resultados del multiple choice */
+.resultado-pregunta {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.resultado-correcto {
+    background: rgba(39, 174, 96, 0.1);
+    color: #27ae60;
+    border: 1px solid #27ae60;
+}
+
+.resultado-incorrecto {
+    background: rgba(231, 76, 60, 0.1);
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
