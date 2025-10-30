@@ -126,31 +126,31 @@ C- Sentía miedo. Sin embargo, no podía marcharme.</br></p>
 <p>7-  La siguiente carta fue escrita por Roderick Usher a su amigo antes de su llegada a la mansión. El texto no tiene ningún signo de puntuación. Tu tarea es agregar los puntos, comas y los puntos y coma que consideres necesarios para que tenga sentido y sea claro. </p>
 
 
+<!-- Segunda Carta Interactiva - Carta de Roderick Usher -->
 <div class="carta-interactiva">
-    <h3>Correo Electrónico.</h3>
+    <h3>Carta de Roderick Usher</h3>
+    <p>Haz clic en el sobre para leer la carta original que Roderick Usher envió a su amigo:</br></br></p>
     
     <div class="envelope-container">
-        <div class="envelope" id="envelope">
+        <div class="envelope" id="envelopeUsher">
             <div class="envelope-back"></div>
             <div class="envelope-flap"></div>
             <div class="envelope-content">
                 <div class="letter">
                     <!-- Imagen pequeña dentro del sobre -->
-                    <img src="carta.jpg" alt="">
+                    <img src="cartausher.png" alt="Carta de Roderick Usher">
                 </div>
             </div>
         </div>
     </div>
     
     <div class="card-large-container">
-        <div class="card-large" id="cardLarge">
+        <div class="card-large" id="cardLargeUsher">
             <!-- Imagen grande que se muestra al abrir el sobre -->
-            <img src="carta.jpg" alt="">
-            <button class="close-btn" id="closeBtn">×</button>
+            <img src="cartausher.png" alt="Carta de Roderick Usher en grande">
+            <button class="close-btn" id="closeBtnUsher">×</button>
         </div>
     </div>
-    
-    <h3>Haz clic en el sobre para abrirlo y ver el correo en grande.</h3>
 </div>
 
 <a href="cuento.html">Ir al Cuento Interactivo</a>
@@ -167,7 +167,21 @@ C- Sentía miedo. Sin embargo, no podía marcharme.</br></p>
             const envelope = document.getElementById('envelope');
             const cardLarge = document.getElementById('cardLarge');
             const closeBtn = document.getElementById('closeBtn');
-            
+			// Primera carta (original)
+    inicializarCarta('envelope', 'cardLarge', 'closeBtn');
+    
+    // Segunda carta (Roderick Usher)
+    inicializarCarta('envelopeUsher', 'cardLargeUsher', 'closeBtnUsher');
+
+
+			// Función para inicializar una carta específica
+function inicializarCarta(envelopeId, cardLargeId, closeBtnId) {
+    const envelope = document.getElementById(envelopeId);
+    const cardLarge = document.getElementById(cardLargeId);
+    const closeBtn = document.getElementById(closeBtnId);
+    
+    if (!envelope || !cardLarge) return;
+	
             // Agregar animación de pulso al sobre
             envelope.classList.add('pulse');
             
@@ -296,6 +310,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
