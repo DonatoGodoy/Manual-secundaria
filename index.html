@@ -419,56 +419,35 @@ function inicializarIndice() {
     });
 }
 
-// Inicializar cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar cartas
-    inicializarCarta('envelope', 'cardLarge', 'closeBtn');
-    inicializarCarta('envelopeUsher', 'cardLargeUsher', 'closeBtnUsher');
+// SOLUCIÓN PARA GENIALLY - Scroll sin problemas
+function fixGeniallyScroll() {
+    const geniallyIframe = document.querySelector('.genially-embed iframe');
     
-    // Inicializar índice
-    inicializarIndice();
-    
-    // Efecto de los tentáculos laterales (si existen)
-    const leftTentacle = document.querySelector('.side-image.left');
-    const rightTentacle = document.querySelector('.side-image.right');
-    
-    if (leftTentacle && rightTentacle) {
-        window.addEventListener('scroll', function() {
-            const scrollPosition = window.scrollY;
+    if (geniallyIframe) {
+        // Desactivar completamente la interactividad del iframe para scroll
+        geniallyIframe.style.pointerEvents = 'none';
+        
+        // Activar solo cuando el usuario haga clic intencionalmente
+        geniallyIframe.addEventListener('click', function(e) {
+            this.style.pointerEvents = 'auto';
             
-            // Activar tentáculos cuando se hace scroll
-            if (scrollPosition > 100) {
-                leftTentacle.classList.add('active');
-                rightTentacle.classList.add('active');
-            } else {
-                leftTentacle.classList.remove('active');
-                rightTentacle.classList.remove('active');
-            }
-            
-            // Hacer que los tentáculos crezcan más al avanzar en la página
-            if (scrollPosition > 500) {
-                leftTentacle.classList.add('growing', 'combined');
-                rightTentacle.classList.add('growing', 'combined');
-            } else {
-                leftTentacle.classList.remove('growing', 'combined');
-                rightTentacle.classList.remove('growing', 'combined');
-            }
+            // Desactivar después de 10 segundos de inactividad
+            setTimeout(() => {
+                this.style.pointerEvents = 'none';
+            }, 10000);
+        });
+        
+        // También desactivar cuando se haga scroll
+        geniallyIframe.addEventListener('wheel', function(e) {
+            this.style.pointerEvents = 'none';
+        });
+        
+        // Para dispositivos táctiles
+        geniallyIframe.addEventListener('touchmove', function(e) {
+            this.style.pointerEvents = 'none';
         });
     }
-});
-
-// Guardar posición antes de cargar Genially
-let scrollPosition = window.pageYOffset;
-
-// Después de cargar, restaurar posición
-window.addEventListener('load', function() {
-    window.scrollTo(0, scrollPosition);
-});
-
-// O prevenir cualquier scroll automático
-window.addEventListener('scroll', function(e) {
-    window.scrollTo(0, scrollPosition);
-});
+}
 
 // Respuestas correctas para el multiple choice
 const respuestasCorrectas = {
@@ -524,8 +503,19 @@ function limpiarSelecciones() {
     });
 }
 
-// Inicializar eventos para las opciones
+// Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar cartas
+    inicializarCarta('envelope', 'cardLarge', 'closeBtn');
+    inicializarCarta('envelopeUsher', 'cardLargeUsher', 'closeBtnUsher');
+    
+    // Inicializar índice
+    inicializarIndice();
+    
+    // Solución para Genially
+    fixGeniallyScroll();
+    
+    // Inicializar eventos para las opciones del multiple choice
     const opciones = document.querySelectorAll('.opcion');
     opciones.forEach(opcion => {
         opcion.addEventListener('click', function() {
@@ -535,10 +525,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+    
+    // Efecto de los tentáculos laterales (si existen)
+    const leftTentacle = document.querySelector('.side-image.left');
+    const rightTentacle = document.querySelector('.side-image.right');
+    
+    if (leftTentacle && rightTentacle) {
+        window.addEventListener('scroll', function() {
+            const scrollPosition = window.scrollY;
+            
+            // Activar tentáculos cuando se hace scroll
+            if (scrollPosition > 100) {
+                leftTentacle.classList.add('active');
+                rightTentacle.classList.add('active');
+            } else {
+                leftTentacle.classList.remove('active');
+                rightTentacle.classList.remove('active');
+            }
+            
+            // Hacer que los tentáculos crezcan más al avanzar en la página
+            if (scrollPosition > 500) {
+                leftTentacle.classList.add('growing', 'combined');
+                rightTentacle.classList.add('growing', 'combined');
+            } else {
+                leftTentacle.classList.remove('growing', 'combined');
+                rightTentacle.classList.remove('growing', 'combined');
+            }
+        });
+    }
 });
 </script>
 </body>
 </html>
+
 
 
 
