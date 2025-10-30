@@ -584,20 +584,22 @@ body {
     background: rgba(231, 76, 60, 0.1);
 }
 
+/* Estilos específicos para textareas - CORREGIDOS */
 .campo-texto {
     width: 100%;
-    min-height: 150px;
+    min-height: 180px; /* Más alto por defecto */
     padding: 25px;
     border: 3px solid #e8e4d9;
     border-radius: 12px;
-    font-family: 'Georgia', serif;
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font-family: 'Georgia', serif; /* Misma tipografía que el cuerpo */
+    font-size: 1.2rem; /* Tamaño consistente */
+    line-height: 1.8; /* Mejor interlineado */
     color: #2c3e50;
     background: #fdfdfd;
     resize: vertical;
     transition: all 0.4s ease;
     box-sizing: border-box;
+    font-weight: normal; /* Mismo peso que el texto normal */
 }
 
 .campo-texto:focus {
@@ -612,27 +614,103 @@ body {
     color: #adb5bd;
     font-style: italic;
     font-size: 1.1rem;
+    font-family: 'Georgia', serif; /* Misma tipografía */
 }
 
+/* Tamaños específicos mejorados */
 .campo-texto.actividad {
-    min-height: 180px;
+    min-height: 220px; /* Más alto para actividades */
     font-size: 1.25rem;
 }
 
 .campo-texto.correccion {
-    min-height: 280px;
-    font-family: 'Courier New', monospace;
-    font-size: 1.1rem;
+    min-height: 350px; /* Mucho más alto para correcciones */
+    font-family: 'Georgia', serif; /* Mantener Georgia, no Courier */
+    font-size: 1.15rem;
     background: #f8f9fa;
     border: 3px dashed #c19a6b;
+    line-height: 1.7;
 }
 
 .campo-texto.correo {
-    min-height: 320px;
+    min-height: 380px; /* Muy alto para correos */
     font-size: 1.15rem;
     background: linear-gradient(to bottom, #f8f9fa, #ffffff);
 }
 
+.campo-texto.publicacion {
+    min-height: 120px;
+    font-size: 1.1rem;
+}
+
+.campo-texto.explicacion {
+    min-height: 100px;
+    font-size: 1.1rem;
+}
+
+/* Asegurar que los textareas en actividades sean consistentes */
+.actividad-escritura .campo-texto {
+    font-family: 'Georgia', serif !important;
+    font-size: 1.2rem !important;
+    line-height: 1.8 !important;
+}
+
+/* Para el formulario de correo específicamente */
+.formulario-correo .campo-texto {
+    font-family: 'Georgia', serif;
+    font-size: 1.15rem;
+    min-height: 320px;
+}
+
+/* Para el espacio de corrección */
+.espacio-correccion .campo-texto {
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+    min-height: 350px;
+    line-height: 1.7;
+}
+
+/* Responsive para textareas */
+@media (max-width: 768px) {
+    .campo-texto {
+        min-height: 150px;
+        padding: 20px;
+        font-size: 1.1rem;
+    }
+    
+    .campo-texto.actividad {
+        min-height: 180px;
+    }
+    
+    .campo-texto.correccion {
+        min-height: 280px;
+        font-size: 1.1rem;
+    }
+    
+    .campo-texto.correo {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .campo-texto {
+        min-height: 120px;
+        padding: 15px;
+        font-size: 1rem;
+    }
+    
+    .campo-texto.actividad {
+        min-height: 150px;
+    }
+    
+    .campo-texto.correccion {
+        min-height: 220px;
+    }
+    
+    .campo-texto.correo {
+        min-height: 250px;
+    }
+}
 .acciones-texto {
     display: flex;
     gap: 15px;
@@ -949,3 +1027,4 @@ body {
 .campo-texto::-webkit-scrollbar-thumb:hover {
     background: #a87c52;
 }
+
