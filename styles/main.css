@@ -568,4 +568,63 @@ body {
     }
 }
 
+/* Estilos para la sección Genially */
+.genially-container {
+    margin: 40px 0;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e8e4d9;
+}
+
+.titulo-genially {
+    text-align: center;
+    color: #2c3e50;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-family: 'Times New Roman', serif;
+    border-bottom: 2px solid rgba(193, 154, 107, 0.3);
+    padding-bottom: 8px;
+}
+
+.genially-embed {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    background: #f8f9fa;
+    border: 1px solid #e8e4d9;
+}
+
+.genially-embed iframe {
+    border-radius: 8px;
+    display: block;
+}
+
+.instrucciones-genially {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .genially-embed iframe {
+        height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .genially-embed iframe {
+        height: 300px;
+    }
+    
+    .genially-container {
+        padding: 15px;
+        margin: 30px 0;
+    }
+}
+
 
