@@ -307,12 +307,19 @@ body {
     align-items: center;
     perspective: 1000px;
     margin-top: 20px;
+    /* NUEVO: Ocultar completamente cuando no se usa */
+    display: none;
+}
+
+.card-large-container.mostrar {
+    /* Solo mostrar cuando tenga la clase 'mostrar' */
+    display: flex;
 }
 
 .card-large {
-    width: 700px;
+    width: 500px;
     max-width: 90%;
-    height: 800px;
+    height: 600px;
     background: white;
     border-radius: 15px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
@@ -626,5 +633,6 @@ body {
         margin: 30px 0;
     }
 }
+
 
 
