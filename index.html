@@ -126,8 +126,28 @@ C- Sentía miedo. Sin embargo, no podía marcharme.</br></p>
 <p>7-  La siguiente carta fue escrita por Roderick Usher a su amigo antes de su llegada a la mansión. El texto no tiene ningún signo de puntuación. Tu tarea es agregar los puntos, comas y los puntos y coma que consideres necesarios para que tenga sentido y sea claro. </p>
 
 
-<p class=”poema”>Querido amigo espero que te encuentres bien hace mucho tiempo que no nos vemos y no sé nada de vos debo confesarte que mi salud se ha debilitado bastante de una manera muy inquietante la casa  se siente más silenciosa cada día las paredes parecen observarnos y mi hermana se encuentra muy enferma también su apariencia me preocupa tanto como la mía a veces me parece escuchar ruidos en el pasillo pero cuando me acerco no hay nada ni nadie las noches son cada vez más largas y el aire más denso necesito de tu compañía te pido que por favor vengas lo antes posible atentamente tu amigo Roderick Usher</p>
-
+<div class="carta-interactiva">
+    <div class="envelope-container">
+        <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="envelope-flap"></div>
+            <div class="envelope-content">
+                <div class="letter">
+                    <!-- Imagen pequeña dentro del sobre -->
+                    <img src="cartausher.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-large-container">
+        <div class="card-large" id="cardLarge">
+            <!-- Imagen grande que se muestra al abrir el sobre -->
+            <img src="cartausher.png" alt="">
+            <button class="close-btn" id="closeBtn">×</button>
+        </div>
+    </div>
+</div>
 
 <a href="cuento.html">Ir al Cuento Interactivo</a>
 
@@ -268,6 +288,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
