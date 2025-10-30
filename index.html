@@ -127,26 +127,30 @@ C- Sentía miedo. Sin embargo, no podía marcharme.</br></p>
 
 
 <div class="carta-interactiva">
+    <h3>Correo Electrónico.</h3>
+    
     <div class="envelope-container">
-        <div class="envelope" id="envelope1">
+        <div class="envelope" id="envelope">
             <div class="envelope-back"></div>
             <div class="envelope-flap"></div>
             <div class="envelope-content">
                 <div class="letter">
                     <!-- Imagen pequeña dentro del sobre -->
-                    <img src="cartausher.png" alt="">
+                    <img src="carta.jpg" alt="">
                 </div>
             </div>
         </div>
     </div>
     
     <div class="card-large-container">
-        <div class="card-large" id="cardLarge1">
+        <div class="card-large" id="cardLarge">
             <!-- Imagen grande que se muestra al abrir el sobre -->
-            <img src="cartausher.png" alt="">
-            <button class="close-btn" id="closeBtn1">×</button>
+            <img src="carta.jpg" alt="">
+            <button class="close-btn" id="closeBtn">×</button>
         </div>
     </div>
+    
+    <h3>Haz clic en el sobre para abrirlo y ver el correo en grande.</h3>
 </div>
 
 <a href="cuento.html">Ir al Cuento Interactivo</a>
@@ -279,6 +283,10 @@ function inicializarIndice() {
     });
 }
 
+	// O prevenir cualquier scroll automático
+window.addEventListener('scroll', function(e) {
+    window.scrollTo(0, scrollPosition);
+
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', function() {
     inicializarIndice();
@@ -288,6 +296,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
