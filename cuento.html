@@ -615,7 +615,7 @@ pues la sonrisa ha muerto.</div>
                 imageTitle: "",
                 audio: "p11.mp3",
                 actionButton: {
-                    text: "Actividades",
+                    text: "Signos de puntuación",
                     sound: "https://assets.mixkit.co/sfx/preview/mixkit-magic-sparkle-sound-3091.mp3",
                     nextPageDelay: 5000
                 }
@@ -912,7 +912,7 @@ async function executeAction() {
         setTimeout(() => {
             // SI ES LA ÚLTIMA PÁGINA, IR A ACTIVIDADES
             if (currentPage === storyPages.length - 1) {
-                window.location.href = "index.html#actividades";
+                window.location.href = "index.html#punto-coma-punto-y-coma";
             } 
             // SI NO ES LA ÚLTIMA, CONTINUAR NORMAL
             else if (currentPage < storyPages.length - 1) {
@@ -982,6 +982,7 @@ window.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
+
 
 
 
